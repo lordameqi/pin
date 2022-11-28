@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
+import 'tiket.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: const MyHomePage(),
     );
   }
@@ -374,7 +377,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                 child: ElevatedButton(
                                   child: const Text('Lanjut'),
-                                  onPressed: () => Navigator.pop(context), style: ButtonStyle(
+                                  onPressed: (){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => Tiket()),
+                                    );
+                                  }, style: ButtonStyle(
                                   shape: MaterialStateProperty.all(
                                     RoundedRectangleBorder(
                                       // Change your radius here
